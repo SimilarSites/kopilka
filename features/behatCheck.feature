@@ -4,4 +4,4 @@ We want to test the home page for a phrase
 
 Scenario: Root Test
 When I am on the homepage
-Then I should see "Laravel 5"
+Then I should see "Laravel"
