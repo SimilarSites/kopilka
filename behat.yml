@@ -6,3 +6,16 @@ default:
             default_session: laravel
             base_url: http://kopilka.pp
             laravel: ~
+        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+            name: html
+            renderer: Twig,Behat2
+            file_name: index
+            print_args: true
+            print_outp: true
+            loop_break: true
+
+    formatters: 
+        html:
+            output_path: /var/www/html/report
+
+
