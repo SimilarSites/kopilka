@@ -21,3 +21,9 @@ Scenario: Check Forgot password page
 Given I am on "login"
 When I follow "Forgot Your Password?"
 Then I should see "Reset password"
+
+Scenario: Fill e-mail field
+Given I am on "login"
+    And I fill in "email" with "aaa"
+When I press "Login"
+Then I should be on "login"
