@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,41 +46,44 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-        ],
+//        'sqlite' => [
+//            'driver' => 'sqlite',
+//            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+//            'prefix' => '',
+//        ],
 
-        'mysql' => [
+//        'mysql' => [
+//            'driver' => 'pgsql',
+////            'host' => env('DB_HOST', 'localhost'),
+////            'port' => env('DB_PORT', '3306'),
+////            'database' => env('DB_DATABASE', 'kopilka'),
+////            'username' => env('DB_USERNAME', '1234567'),
+////            'password' => env('DB_PASSWORD', ''),
+//    'host'     => parse_url(getenv("DATABASE_URL"))["host"],
+//    'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
+//    'username' => parse_url(getenv("DATABASE_URL"))["user"],
+//    'password' => parse_url(getenv("DATABASE_URL"))["pass"],
+//
+//                'charset' => 'utf8',
+//            'collation' => 'utf8_unicode_ci',
+//            'prefix' => '',
+//            'strict' => false,
+//            'engine' => null,
+//        ],
+
+        'pgsql' => [
             'driver' => 'pgsql',
-//            'host' => env('DB_HOST', 'localhost'),
-//            'port' => env('DB_PORT', '3306'),
-//            'database' => env('DB_DATABASE', 'kopilka'),
-//            'username' => env('DB_USERNAME', '1234567'),
-//            'password' => env('DB_PASSWORD', ''),
-    'host'     => parse_url(getenv("DATABASE_URL"))["host"],
-    'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
-    'username' => parse_url(getenv("DATABASE_URL"))["user"],
-    'password' => parse_url(getenv("DATABASE_URL"))["pass"],
+            'host'     => parse_url(getenv("DATABASE_URL"))["host"],
+            'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
+            'username' => parse_url(getenv("DATABASE_URL"))["user"],
+            'password' => parse_url(getenv("DATABASE_URL"))["pass"],
 
                 'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'strict' => false,
             'engine' => null,
-        ],
-
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
+            'schema' => 'public'
         ],
 
     ],
@@ -96,7 +99,7 @@ return [
     |
     */
 
-    'migrations' => 'migrations',
+    'migrations' => 'smigrations',
 
     /*
     |--------------------------------------------------------------------------
